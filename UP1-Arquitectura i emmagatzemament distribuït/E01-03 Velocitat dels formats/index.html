@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../01-Introducci%C3%B3/">
+        <link rel="prev" href="../E01-02%20-%20Arquitectures/">
       
       
-        <link rel="next" href="../E01-02%20-%20Arquitectures/">
+        <link rel="next" href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/E02-01%20-%20Instal%C2%B7lar%20hadoop/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Exercici E01-01 - Introducció - BDA</title>
+        <title>E01-03 Velocitat dels formats - BDA</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercici-e01-01-introduccio" class="md-skip">
+        <a href="#e01-03-velocitat-dels-formats" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercici E01-01 - Introducció
+              E01-03 Velocitat dels formats
             
           </span>
         </div>
@@ -303,19 +303,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../E01-01%20-%20Introducci%C3%B3/" class="md-nav__link">
         
   
   
@@ -331,7 +322,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -369,10 +359,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../E01-03%20Velocitat%20dels%20formats/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01-03 Velocitat dels formats
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -388,6 +405,39 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#e01-03-1-csv-vs-parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E01-03-1 CSV vs Parquet
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -506,6 +556,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#e01-03-1-csv-vs-parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E01-03-1 CSV vs Parquet
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -521,45 +590,10 @@
 
 
 
-<h1 id="exercici-e01-01-introduccio">Exercici E01-01 - Introducció</h1>
-<ol>
-<li>
-<p>Contesta les preguntes següents justificant les teves respostes:</p>
-<ul>
-<li>
-<p>1.1. Des del teu punt de vista, Quina V de les relacionades amb Big Data consideres més important?</p>
-</li>
-<li>
-<p>1.2. En el teu dia a dia, ja sigui des d'una perspectiva personal o professional, quina eina / servei / tecnologia basada en Big Data fa la teva vida més fàcil i ja no podries viure sense?</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Una empresa de comerç electrònic té els requisits següents:</p>
-<pre><code>- Processar pagaments amb targeta en temps real
-- Analitzar tendències de vendes dels darrers 5 anys
-- Generar informes mensuals de comportament del client
-- Gestionar l'inventari a temps real
-</code></pre>
-<p>Contesta les següents preguntes:</p>
-<ul>
-<li>2.1. Identifica quines operacions corresponen a OLTP i quines a OLAP, justificant la teva resposta.</li>
-<li>2.2. Proposa una solució demmagatzematge per a cada tipus d'operació, explicant per què és adequada per a cada cas.</li>
-</ul>
-</li>
-<li>
-<p>A partir del mapa d'eines que mostra Matt Truck amb la seva landscape a <a href="https://mad.firstmark.com/,">https://mad.firstmark.com/,</a> localitza (en Internet) les eines/tecnologies següents (i cerca a internet , i anota a quina categoria pertanyen i el nom d'una altra eina de la mateixa  categoria:</p>
-<pre><code>    AWS S3
-    Databricks
-    Microsoft Power BI
-    AWS Redshift
-    Apatxe Kafka
-    Apache Airflow
-    MongoDB
-</code></pre>
-<p>Et pot resultar més còmode cercar a <a href="https://mad.firstmark.com/card.">https://mad.firstmark.com/card.</a></p>
-</li>
-</ol>
+<h1 id="e01-03-velocitat-dels-formats">E01-03 Velocitat dels formats</h1>
+<h2 id="e01-03-1-csv-vs-parquet">E01-03-1 CSV vs Parquet</h2>
+<p>Anem a analitzar la velocidat d'us del format CSV respecte a Parquet. El professor el donarà el codi pertinent i feu el que vos explique en classe. </p>
+<p>L'entrega és una captura de pantalla amb l'execució del codi. Mostra el teu nom, la data i l'hora en la que ho executes.</p>
 
 
 
