@@ -9,28 +9,26 @@
       
       
       
-        <link rel="prev" href="../01-Introducci%C3%B3/">
+        <link rel="prev" href="../UP2-E01-03%20Treballant%20amb%20HDFS/">
       
-      
-        <link rel="next" href="../E01-02%20-%20Arquitectures/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Exercici E01-01 - Introducció - BDA</title>
+        <title>UP2-E01-04 Hadoop 3.5 amb Docker - BDA</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercici-e01-01-introduccio" class="md-skip">
+        <a href="#up2-e01-04-hadoop-35-amb-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +86,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="BDA" class="md-header__button md-logo" aria-label="BDA" data-md-component="logo">
+    <a href="../../.." title="BDA" class="md-header__button md-logo" aria-label="BDA" data-md-component="logo">
       
-  <img src="../../assets/icon.png" alt="logo">
+  <img src="../../../assets/icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercici E01-01 - Introducció
+              UP2-E01-04 Hadoop 3.5 amb Docker
             
           </span>
         </div>
@@ -185,9 +183,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="BDA" class="md-nav__button md-logo" aria-label="BDA" data-md-component="logo">
+    <a href="../../.." title="BDA" class="md-nav__button md-logo" aria-label="BDA" data-md-component="logo">
       
-  <img src="../../assets/icon.png" alt="logo">
+  <img src="../../../assets/icon.png" alt="logo">
 
     </a>
     BDA
@@ -197,6 +195,250 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP1 Arquitectura i emmagatzemament distribuït
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP1 Arquitectura i emmagatzemament distribuït
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/01-Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/E01-01%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercici E01-01 - Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/E01-02%20-%20Arquitectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01-02 - Arquitectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/E01-03%20Comparar%20formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01-03 Comparar formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2 Ecosistema i processament distribuït
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP2 Ecosistema i processament distribuït
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -221,9 +463,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
     
@@ -239,17 +482,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    UP1 Arquitectura i emmagatzemament distribuït
+    Hadoop
   
 
     
@@ -260,12 +503,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    UP1 Arquitectura i emmagatzemament distribuït
+    Hadoop
   
 
           </label>
@@ -278,14 +521,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-Introducci%C3%B3/" class="md-nav__link">
+      <a href="../10%20Introducci%C3%B3%20a%20Hadoop/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Introducció
+    Introducció a Hadoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-01%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-01 - Instal·lació pseudodistribuida hadoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-02 - Instal·lar Hadoop amb Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-03%20Treballant%20amb%20HDFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-03 Treballant amb HDFS
   
 
     
@@ -322,336 +649,6 @@
   <span class="md-ellipsis">
     
   
-    Exercici E01-01 - Introducció
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../E01-02%20-%20Arquitectures/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    E01-02 - Arquitectures
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../E01-03%20Comparar%20formats/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    E01-03 Comparar formats
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2 Ecosistema i processament distribuït
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    UP2 Ecosistema i processament distribuït
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/Introducci%C3%B3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introducció
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Hadoop
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Hadoop
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/Hadoop/10%20Introducci%C3%B3%20a%20Hadoop/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introducció a Hadoop
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/Hadoop/UP2-E01-01%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2-E01-01 - Instal·lació pseudodistribuida hadoop
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/Hadoop/UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2-E01-02 - Instal·lar Hadoop amb Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/Hadoop/UP2-E01-03%20Treballant%20amb%20HDFS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2-E01-03 Treballant amb HDFS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../UP2-Ecosistema%20i%20processament%20distribu%C3%AFt/Hadoop/UP2-E01-04%20Hadoop%203.5%20amb%20Docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
     UP2-E01-04 Hadoop 3.5 amb Docker
   
 
@@ -661,6 +658,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -718,45 +716,15 @@
 
 
 
-<h1 id="exercici-e01-01-introduccio">Exercici E01-01 - Introducció</h1>
+<h1 id="up2-e01-04-hadoop-35-amb-docker">UP2-E01-04 Hadoop 3.5 amb Docker</h1>
+<p>Anem a analitzar 4 conceptes importants:</p>
 <ol>
-<li>
-<p>Contesta les preguntes següents justificant les teves respostes:</p>
-<ul>
-<li>
-<p>1.1. Des del teu punt de vista, Quina V de les relacionades amb Big Data consideres més important?</p>
-</li>
-<li>
-<p>1.2. En el teu dia a dia, ja sigui des d'una perspectiva personal o professional, quina eina / servei / tecnologia basada en Big Data fa la teva vida més fàcil i ja no podries viure sense?</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Una empresa de comerç electrònic té els requisits següents:</p>
-<pre><code>- Processar pagaments amb targeta en temps real
-- Analitzar tendències de vendes dels darrers 5 anys
-- Generar informes mensuals de comportament del client
-- Gestionar l'inventari a temps real
-</code></pre>
-<p>Contesta les següents preguntes:</p>
-<ul>
-<li>2.1. Identifica quines operacions corresponen a OLTP i quines a OLAP, justificant la teva resposta.</li>
-<li>2.2. Proposa una solució demmagatzematge per a cada tipus d'operació, explicant per què és adequada per a cada cas.</li>
-</ul>
-</li>
-<li>
-<p>A partir del mapa d'eines que mostra Matt Truck amb la seva landscape a <a href="https://mad.firstmark.com/,">https://mad.firstmark.com/,</a> localitza (en Internet) les eines/tecnologies següents (i cerca a internet , i anota a quina categoria pertanyen i el nom d'una altra eina de la mateixa  categoria:</p>
-<pre><code>    AWS S3
-    Databricks
-    Microsoft Power BI
-    AWS Redshift
-    Apatxe Kafka
-    Apache Airflow
-    MongoDB
-</code></pre>
-<p>Et pot resultar més còmode cercar a <a href="https://mad.firstmark.com/card.">https://mad.firstmark.com/card.</a></p>
-</li>
+<li>Utilitzant la configuració de UP2-E01-02 i sabent que la imatge de hadoop 3.5 existeix en Apache, canvia la configuració per fer-la funcionar i repeteix la pràctica Hadoop UP2-E01-02</li>
+<li>Utilitzant la versió 3.5 d'abans, repeteix les ordres fetes a l'exercici UP2-E01-03</li>
+<li>Donat que tenim Hadoop sense Docker instal·lat amb l'usuari hadoop, investiga com iniciar yarn (start-yarn.sh)</li>
+<li>Quina millora s'ha introduït al utilitzar Java 17 en Hadoop 3.5 i el motiu que siga tan important?</li>
 </ol>
+<p>Crea un document amb les captures de pantalla pertinents en el que expliques que fas. El professor passarà a comprovar que tens la MV configurada amb la instal·lació feta.</p>
 
 
 
@@ -801,10 +769,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

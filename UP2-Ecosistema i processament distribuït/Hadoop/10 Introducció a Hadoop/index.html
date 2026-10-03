@@ -618,6 +618,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#introduccio-al-entorn-ui-de-hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducció al entorn UI de Hadoop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#treballant-amb-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treballant amb HDFS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistencia-i-distribucio-de-fitxers-al-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistència i distribució de fitxers al cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mapreduce" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -680,6 +713,62 @@
     
   
     UP2-E01-02 - Instal·lar Hadoop amb Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-03%20Treballant%20amb%20HDFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-03 Treballant amb HDFS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-04%20Hadoop%203.5%20amb%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-04 Hadoop 3.5 amb Docker
   
 
     
@@ -770,6 +859,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#introduccio-al-entorn-ui-de-hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducció al entorn UI de Hadoop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#treballant-amb-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treballant amb HDFS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistencia-i-distribucio-de-fitxers-al-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistència i distribució de fitxers al cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mapreduce" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -801,13 +923,38 @@
 <h3 id="historia">Història</h3>
 <p>Comencem per  <a href="../Adjuntos/BDA01_Introduccion_Apache_Hadoop.pdf">l'història</a> al pdf  (fins 2.1)</p>
 <h3 id="arquitectura-de-hadoop">Arquitectura de Hadoop</h3>
-<p>En els apunts: Ecosistema Hadoop-&gt; hadoop<br />
-En el pdf en apartat 2.3 (pag 22)</p>
+<p>En els apunts: Ecosistema -&gt; hadoop<br />
+En el pdf en apartat 2.3 (pag 22)
+S'explicarà el concepte de Alta disponibilitat (Standby ) vs Federation (particions en espais de noms)</p>
 <h3 id="exercicis">Exercicis</h3>
-<p><a href="../UP2-E01-01%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/">UP2-E01-01 - Instal·lar Hadoop en Linux</a>
-<a href="../UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/">UP2-E01-02 - Instal·lar Hadoop amb Docker</a></p>
+<ul>
+<li><a href="../UP2-E01-01%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/">UP2-E01-01 - Instal·lar Hadoop en Linux</a></li>
+<li><a href="../UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/">UP2-E01-02 - Instal·lar Hadoop amb Docker</a></li>
+</ul>
+<h3 id="introduccio-al-entorn-ui-de-hadoop">Introducció al entorn UI de Hadoop</h3>
+<p>Obrim una terminal i entren amb l'usuari hadoop (su hadoop). Iniciem els serveis (start/stop-dfs.sh) i comprovem que estiga tot en marxa (jps). 
+Entrem al (<a href="http://localhost:9870">navegador</a>) i el professor explicarà la interficie web</p>
+<h3 id="treballant-amb-hdfs">Treballant amb HDFS</h3>
+<p>Anem a veure el funcionament de la interficie web i les ordres. Al apunts ho tenim en: 
+Ecosistema -&gt; HDFS-&gt; Trabajando con HDFS
+S'explicara breument els conceptes de Namenodes i Datanodes aixì com YARN. 
+Les ordres son molt paregudes a linux per a Hadoop</p>
+<p>En aquestos exercicis s'activarà Yarn</p>
+<h5 id="exercicis_1">Exercicis</h5>
+<blockquote>
+<p><a href="../UP2-E01-03%20Treballant%20amb%20HDFS/">UP2-E01-03 Treballant amb HDFS</a>
+<a href="../UP2-E01-04%20Hadoop%203.5%20amb%20Docker/">UP2-E01-04 Hadoop 3.5 amb Docker</a></p>
+</blockquote>
+<h3 id="persistencia-i-distribucio-de-fitxers-al-cluster">Persistència i distribució de fitxers al cluster</h3>
+<p>Entrem a explicar la persistència amb Docker de Hadoop. Es conceptes de Namenodes i Datanodes i la distribució del blocks en els fitxers (Ecosistema-&gt; HDFS-&gt;bloques). </p>
+<p>En construcció: </p>
+<p><span style="color:#1c7ed6">UP2-E01-04 Persistència </span></p>
 <h3 id="mapreduce">MapReduce</h3>
-<p>Veurem el concepte en els apunts: Ecosistema Hadoop-&gt; hadoop</p>
+<p>Veurem el concepte en els apunts: Ecosistema-&gt; hadoop -&gt; Mapreduce i Ecosistema-&gt; hadoop -&gt; YARN</p>
+<p>En construcció: </p>
+<p><span style="color:#1c7ed6">UP2-E01-05 MapReduce amb java </span>
+<span style="color:#1c7ed6">UP2-E01-06 MapReduce amb Python </span>
+<span style="color:#1c7ed6">UP2-E01-07 MapReduce amb mrjob </span></p>
 
 
 
