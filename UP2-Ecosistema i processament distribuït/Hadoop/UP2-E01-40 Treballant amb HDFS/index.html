@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../10%20Introducci%C3%B3%20a%20Hadoop/">
+        <link rel="prev" href="../UP2-E01-30%20Configurar%20cluster/">
       
       
-        <link rel="next" href="../UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/">
+        <link rel="next" href="../UP2-E01-50%20Hadoop%203.5%20amb%20Docker/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>UP2-E01-01 - Instal·lació pseudodistribuida hadoop - BDA</title>
+        <title>UP2-E01-40 Treballant amb HDFS - BDA</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#up2-e01-01-installacio-pseudodistribuida-hadoop" class="md-skip">
+        <a href="#up2-e01-40-treballant-amb-hdfs" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UP2-E01-01 - Instal·lació pseudodistribuida hadoop
+              UP2-E01-40 Treballant amb HDFS
             
           </span>
         </div>
@@ -548,6 +548,90 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-10%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-10 - Instal·lació pseudodistribuida hadoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-20%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-20 - Instal·lar Hadoop amb Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-30%20Configurar%20cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2 E01 30 Configurar cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -567,7 +651,7 @@
   <span class="md-ellipsis">
     
   
-    UP2-E01-01 - Instal·lació pseudodistribuida hadoop
+    UP2-E01-40 Treballant amb HDFS
   
 
     
@@ -589,70 +673,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
+      <a href="../UP2-E01-50%20Hadoop%203.5%20amb%20Docker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    UP2-E01-02 - Instal·lar Hadoop amb Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../UP2-E01-03%20Treballant%20amb%20HDFS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2-E01-03 Treballant amb HDFS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../UP2-E01-04%20Hadoop%203.5%20amb%20Docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2-E01-04 Hadoop 3.5 amb Docker
+    UP2-E01-50 Hadoop 3.5 amb Docker
   
 
     
@@ -718,36 +746,21 @@
 
 
 
-<h1 id="up2-e01-01-installacio-pseudodistribuida-hadoop">UP2-E01-01 - Instal·lació pseudodistribuida hadoop</h1>
-<p>Es important fer una instal·lació completa pas a pas per comprendre les eines que s'utilitzen. Despres d'aquest exercici utilitzarem Docker, ja que és més versàtil i fàcil de gestionar.</p>
-<p>En aquest exercici instal·lem Hadoop en una MV de Debian 12 o superior amb Hadoop 3.5.0 pas a pas seguint els videos del enllaç. En aquestos videos s'utilitza una versió antiga amb un Linux CentOS. Nosaltres ho actualitzarem. </p>
-<table>
-<thead>
-<tr>
-<th><br><a href="https://www.youtube.com/watch?v=BYi0uuNZmno&amp;list=PLG1t8jaLbxA_DG_cmlBYgkGW-TZw5DP3B&amp;index=1">Video d'ajuda a Instal·lar Hadoop en Linux i Virtualbox</a></th>
-<th><img alt="" src="../../Adjuntos/Pasted%20image%2020260921130431.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>El motiu de CentOS al video: Com que <strong>CentOS</strong> era el clon lliure, gratuït i 100% compatible amb <em>Red Hat Enterprise Linux (RHEL)</em>, es va convertir immediatament en el sistema operatiu de preferència per a muntar els nodes d'infraestructura real dels clústers de producció.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>La versió de Java per Hadoop 3.5.0 ha de ser la 17 o superior.</p>
-<p>Crea un document amb els pasos i les captures de pantalla pertinents en el que expliques que fas. El professor passarà a comprovar que tens la MV configurada amb la instal·lació feta.</p>
-<p>Resum del passos a fer:</p>
-<ul>
-<li>No cal (de moment) configurar la MV en mode "bridge" ni obrir ports amb NAT, però en un futur sí ho necessitem.</li>
-<li>Crear un usuari anomenat hadoop</li>
-<li>Instal.lar Java SE 17-0-13: <a href="https://www.oracle.com/java/technologies/javase/jdk17-0-13-later-archive-downloads.html">Web de Oracle</a>  (Recomane fer: sudo apt install openjdk-17-jdk)</li>
-<li>Instal.lar la versió 3.5.0 de Hadoop (estable). Baixe: <a href="https://downloads01-he-fi.apache.org/hadoop/common/stable/hadoop-3.5.0.tar.gz">hadoop-3.5.0.tar.gz</a> (<a href="https://downloads01-he-fi.apache.org/hadoop/common/stable/">Web de Hadoop</a>)</li>
-<li>Modificar configuració de hadoop en la carpeta etc</li>
-<li>Inicialitzar el sistema de fitxers hadoop</li>
-<li>Configurar passwordless SSH</li>
-<li>Iniciar hadoop i connectar-se al browser (9870)</li>
-</ul>
+<h1 id="up2-e01-40-treballant-amb-hdfs">UP2-E01-40 Treballant amb HDFS</h1>
+<p>Les ordres son molt paregudes a Linux per a Hadoop. Al apunts ho tenim en: 
+Ecosistema → HDFS → Trabajando HDFS</p>
+<p>Aquest exercici el farem dues vegades, amb el Hadoop local i amb el Hadoop amb docker. El que hem de fer és: </p>
+<ol>
+<li>Utilitzant la Instal·lació de Docker  feu: Crear un arxiu <code>prova.txt</code>  amb el contingut que vulgues i utilitzant les ordres de hdfs en la terminal, crea una carpeta anomenada prova on has de pujar al sistema HDFS el fitxer prova.txt que has creat.<br />
+<span style="display:block; margin-left:2em">Al pujar un arxiu gran es va en molts blocks i es distribueixen  en molt nodes. Cada bloc te id que l'identifica. </span></li>
+<li>
+<p>Utilitzant les ordres de la terminal hdfs mostra el fitxer, copia-lo (amb altre nom, com per exemple copia.txt)  i elimina el original</p>
+</li>
+<li>
+<p>Repeteix els dos punts d'abans però amb Hadoop local (sense Docker)</p>
+</li>
+</ol>
+<p>Captura pantalla de la terminal i del Browser Directory de Hadoop de tot el que fas i ho documentes.</p>
 
 
 

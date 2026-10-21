@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../UP2-E01-03%20Treballant%20amb%20HDFS/">
+        <link rel="prev" href="../UP2-E01-20%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/">
       
+      
+        <link rel="next" href="../UP2-E01-40%20Treballant%20amb%20HDFS/">
       
       
         
@@ -21,7 +23,7 @@
     
     
       
-        <title>UP2-E01-04 Hadoop 3.5 amb Docker - BDA</title>
+        <title>UP2 E01 30 Configurar cluster - BDA</title>
       
     
     
@@ -69,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#up2-e01-04-hadoop-35-amb-docker" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UP2-E01-04 Hadoop 3.5 amb Docker
+              UP2 E01 30 Configurar cluster
             
           </span>
         </div>
@@ -549,14 +546,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../UP2-E01-01%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/" class="md-nav__link">
+      <a href="../UP2-E01-10%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    UP2-E01-01 - Instal·lació pseudodistribuida hadoop
+    UP2-E01-10 - Instal·lació pseudodistribuida hadoop
   
 
     
@@ -577,42 +574,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../UP2-E01-02%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
+      <a href="../UP2-E01-20%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    UP2-E01-02 - Instal·lar Hadoop amb Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../UP2-E01-03%20Treballant%20amb%20HDFS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UP2-E01-03 Treballant amb HDFS
+    UP2-E01-20 - Instal·lar Hadoop amb Docker
   
 
     
@@ -639,8 +608,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -649,7 +616,7 @@
   <span class="md-ellipsis">
     
   
-    UP2-E01-04 Hadoop 3.5 amb Docker
+    UP2 E01 30 Configurar cluster
   
 
     
@@ -659,6 +626,62 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-40%20Treballant%20amb%20HDFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-40 Treballant amb HDFS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-50%20Hadoop%203.5%20amb%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-50 Hadoop 3.5 amb Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -698,8 +721,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -716,16 +737,11 @@
 
 
 
-<h1 id="up2-e01-04-hadoop-35-amb-docker">UP2-E01-04 Hadoop 3.5 amb Docker</h1>
-<p>Anem a analitzar 4 conceptes importants:</p>
-<ol>
-<li>Utilitzant la configuració de UP2-E01-02 i sabent que la imatge de hadoop 3.5 existeix en Apache, canvia la configuració per fer-la funcionar i repeteix la pràctica Hadoop UP2-E01-02</li>
-<li>Utilitzant la versió 3.5 d'abans, repeteix les ordres fetes a l'exercici UP2-E01-03</li>
-<li>Donat que tenim Hadoop sense Docker instal·lat amb l'usuari hadoop en la màquina virtual, investiga com iniciar yarn (start-yarn.sh). Accediu al port 8088 amb el navegador</li>
-<li>Explica les propietats dels fitxers de configuració. Quina diferència hi ha entre utilitzar Docker o no en la comunicació entre nodes?</li>
-<li>Quina millora s'ha introduït al utilitzar Java 17 en Hadoop 3.5 i el motiu que siga tan important?</li>
-</ol>
-<p>Crea un document amb les captures de pantalla pertinents en el que expliques que fas. El professor passarà a comprovar que tens la MV configurada amb la instal·lació feta.</p>
+  <h1>UP2 E01 30 Configurar cluster</h1>
+
+<p>Seguim les instruccions del professor per configurar les dos MV</p>
+<p>Crea un document amb les captures de pantalla pertinents que el professor t'indica. 
+El professor passarà a comprovar que tens les máquines configurades amb la configuració indicada.</p>
 
 
 
