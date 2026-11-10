@@ -424,10 +424,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#e01-03-1-csv-vs-parquet-amb-pandas-sense-spark" class="md-nav__link">
+  <a href="#e01-03-01-csv-vs-parquet-amb-pandas-sense-spark" class="md-nav__link">
     <span class="md-ellipsis">
       
-        E01-03-1 CSV vs Parquet amb Pandas sense Spark
+        E01-03-01 CSV vs Parquet amb Pandas sense Spark
       
     </span>
   </a>
@@ -435,10 +435,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#e01-03-2-csv-vs-fastavro-vs-parquet" class="md-nav__link">
+  <a href="#e01-03-02-csv-vs-fastavro-vs-parquet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        E01-03-2 CSV vs Fastavro vs Parquet
+        E01-03-02 CSV vs Fastavro vs Parquet
       
     </span>
   </a>
@@ -446,10 +446,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#e01-03-3-llegir-parquet-amb-duckdb" class="md-nav__link">
+  <a href="#eo1-03-04-delta-lake-vs-parquet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        E01-03-3 Llegir Parquet amb DuckDB
+        EO1-03-04 Delta Lake vs parquet
       
     </span>
   </a>
@@ -457,21 +457,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#eo1-03-4-delta-lake-vs-parquet" class="md-nav__link">
+  <a href="#eo1-03-05-conclusio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EO1-03-4 Delta Lake vs parquet
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#eo1-03-5-conclusio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        EO1-03-5 Conclusió
+        EO1-03-05 Conclusió
       
     </span>
   </a>
@@ -843,10 +832,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#e01-03-1-csv-vs-parquet-amb-pandas-sense-spark" class="md-nav__link">
+  <a href="#e01-03-01-csv-vs-parquet-amb-pandas-sense-spark" class="md-nav__link">
     <span class="md-ellipsis">
       
-        E01-03-1 CSV vs Parquet amb Pandas sense Spark
+        E01-03-01 CSV vs Parquet amb Pandas sense Spark
       
     </span>
   </a>
@@ -854,10 +843,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#e01-03-2-csv-vs-fastavro-vs-parquet" class="md-nav__link">
+  <a href="#e01-03-02-csv-vs-fastavro-vs-parquet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        E01-03-2 CSV vs Fastavro vs Parquet
+        E01-03-02 CSV vs Fastavro vs Parquet
       
     </span>
   </a>
@@ -865,10 +854,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#e01-03-3-llegir-parquet-amb-duckdb" class="md-nav__link">
+  <a href="#eo1-03-04-delta-lake-vs-parquet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        E01-03-3 Llegir Parquet amb DuckDB
+        EO1-03-04 Delta Lake vs parquet
       
     </span>
   </a>
@@ -876,21 +865,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#eo1-03-4-delta-lake-vs-parquet" class="md-nav__link">
+  <a href="#eo1-03-05-conclusio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EO1-03-4 Delta Lake vs parquet
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#eo1-03-5-conclusio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        EO1-03-5 Conclusió
+        EO1-03-05 Conclusió
       
     </span>
   </a>
@@ -926,25 +904,60 @@
 
 
 <h1 id="e01-03-comparar-formats">E01-03 Comparar formats</h1>
-<h2 id="e01-03-1-csv-vs-parquet-amb-pandas-sense-spark">E01-03-1 CSV vs Parquet amb Pandas sense Spark</h2>
+<h2 id="e01-03-01-csv-vs-parquet-amb-pandas-sense-spark">E01-03-01 CSV vs Parquet amb Pandas sense Spark</h2>
 <p>Anem a analitzar la velocidat d'us del format CSV respecte a Parquet. El professor el donarà el codi pertinent i feu el que vos explique en classe. </p>
 <p>Compara el tamany, contingut i velocitat dels fitxers al treballar amb ells.</p>
 <p>Fes amb Excel el mateix exercici amb el fitxer test_csv.csv que tens al codi.</p>
 <p>L'entrega és fer les captures de pantalla amb l'execució del codi tal com el professor t'indica. Mostra el teu nom, la data i l'hora en la que ho executes. D'ara endavant sempre se demanaran les captures de pantalla de la mateixa forma.</p>
-<p>En aquest exercici es demanen dos captures que el professor t'endicarà.</p>
-<h4 id="format-obligatori">Format obligatori</h4>
-<ul>
-<li><strong>Data i hora</strong>:<ul>
-<li>Ordre de linux: <code>date +%d/%m/%Y %H:%M</code> Per exemple: "03/11/2026 23:08"</li>
-<li>Powershell: <code>Get-Date -Format "dd/MM/yyyy HH:mm"</code></li>
-<li>Cmd Win: <code>echo %date:~0,2%/%date:~3,2%/%date:~6,4% %time:~0,2%:%time:~3,2%</code></li>
-</ul>
-</li>
-<li><strong>El teu nom</strong>: Ha de ser el mateix que ix al perfil d'Aules (nom en Majúscules)</li>
-<li><strong>Fitxer de captura</strong>: UP1-E01-03-1-X.png on X es 01,02,03,... en funció de les captures que fas. Observa que UP1 és el tema, E01-03-1 és l'exercici i X és el número de captura.</li>
-</ul>
-<p><strong>El no respetar el format anul·la l'exercici</strong></p>
-<h2 id="e01-03-2-csv-vs-fastavro-vs-parquet">E01-03-2 CSV vs Fastavro vs Parquet</h2>
+<p>En aquest exercici es demanen dos captures que el professor t'endicarà:</p>
+<table>
+<thead>
+<tr>
+<th>Nom fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E01-03-01-01.png</td>
+<td>Comparativa</td>
+</tr>
+<tr>
+<td>E01-03-01-02.png</td>
+<td>Amb Excel</td>
+</tr>
+<tr>
+<td>#### Format obligatori</td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>Data i hora</strong>:</td>
+<td></td>
+</tr>
+<tr>
+<td>- Ordre de linux: <code>date +%d/%m/%Y %H:%M</code> Per exemple: "03/11/2026 23:08"</td>
+<td></td>
+</tr>
+<tr>
+<td>- Powershell: <code>Get-Date -Format "dd/MM/yyyy HH:mm"</code></td>
+<td></td>
+</tr>
+<tr>
+<td>- Cmd Win: <code>echo %date:~0,2%/%date:~3,2%/%date:~6,4% %time:~0,2%:%time:~3,2%</code></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>El teu nom</strong>: Ha de ser el mateix que ix al perfil d'Aules (nom en Majúscules)</td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>Fitxer de captura</strong>: UP1-E01-03-01-X.png on X es 01,02,03,... en funció de les captures que fas. Observa que UP1 és el tema, E01-03-01 és l'exercici i X és el número de captura.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NO PUJEU CAP ZIP A AULES. NO RESPETAR EL FORMAT ANUL·LA L'EXERCICI</strong> </p>
+<h2 id="e01-03-02-csv-vs-fastavro-vs-parquet">E01-03-02 CSV vs Fastavro vs Parquet</h2>
 <p>Ara utilitzem les llibreries Pandas i fastavro. Si definim l'esquema per a fastavro de la següent forma:</p>
 <pre><code class="language-python"># Per a Avro, definim l'esquema corresponent a l'estructura del DataFrame
 schema = {
@@ -960,20 +973,61 @@ schema = {
 </code></pre>
 <p>Modifica el codi del exercici d'abans per generar el mateix fitxer d'abans i compara els tres formats: CSV vs Fastavro vs Parquet</p>
 <p><strong>Exercici avançat.</strong> Millora el codi utilitzant la llibreria Polars, donat que Fastavro es lent (i el professor t'ho explica en classe). Fes el mateix exercici i compara els formats Avro i Parquet amb l'us d'aquesta llibreria. </p>
-<h2 id="e01-03-3-llegir-parquet-amb-duckdb">E01-03-3 Llegir Parquet amb DuckDB</h2>
+<p>En aquest exercici es demanen dos captures que el professor t'endicarà. El nom dels fitxers deu ser:</p>
+<table>
+<thead>
+<tr>
+<th>Nom fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E01-03-02-01.png</td>
+<td>Comparativa sense Polars</td>
+</tr>
+<tr>
+<td>E01-03-02-02.png</td>
+<td>Amb Polars</td>
+</tr>
+<tr>
+<td>## E01-03-03 Llegir Parquet amb DuckDB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Fem el mateix exercici amb DuckDB</p>
 <p>Executa: ! ls -lh per comparar tamany fitxers  i per veure el contingut <code>head fitxers</code></p>
-<h2 id="eo1-03-4-delta-lake-vs-parquet">EO1-03-4 Delta Lake vs parquet</h2>
+<p>En aquest exercici es demana una captures que el professor t'endicarà. El nom dels fitxers deu ser:</p>
+<ul>
+<li>E01-03-03-01.png</li>
+</ul>
+<h2 id="eo1-03-04-delta-lake-vs-parquet">EO1-03-04 Delta Lake vs parquet</h2>
 <p>Aneu als apunts de Spark → Delta lake i feu el que vos comenta el professor. Fes captura de pantalla amb el codi que te dona i descriu el format</p>
-<h2 id="eo1-03-5-conclusio">EO1-03-5 Conclusió</h2>
-<p>Fes un document en el que descrius les conclusions que traus de cada exercici i una conclusió final</p>
+<p>En aquest exercici es demana una captura que el professor t'endicarà. El nom dels fitxers deu ser:</p>
+<ul>
+<li>E01-03-04-01.png</li>
+</ul>
+<h2 id="eo1-03-05-conclusio">EO1-03-05 Conclusió</h2>
+<p>Fes un document en el que descrius les conclusions que traus de cada exercici i una conclusió final. No cal explicar com es fa l'exercici ni afegir les captures, sols a quina conclusió s'arriba de cada exercici. L'extructura del document pot-ser, per exemple:</p>
+<p><span style="display:block; text-align:center"><span style="font-weight:bold">Conclusions EO1-03</span></span>
+EO1-03-01
+En aquest exercici hem vist que en funció de la tasca hem de treballar amb diferents  formats i els hem comparat .... </p>
+<p>EO1-03-02
+Hem analitzat el rendiment dels formats utilitzant altres llibreries ....</p>
+<p>EO1-03-03
+......</p>
+<p>En aquest exercici es demana un document. El nom del fitxer deu ser:
+- E01-03-05-01.pdf</p>
 <h2 id="criteris-de-puntuacio">Criteris de puntuació:</h2>
-<p>E01-03-1. Captures:2.  2 punts 
-E01-03-2. Captures:2.  2 punts 
-E01-03-3. Captures:1.  1 punts 
-E01-03-4. Captures:1.  1 punts 
-E01-03-5. Resum amb pdf o semblant.  4 punts </p>
-<p>Tot en un zip a aules.</p>
+<ul>
+<li>E01-03-01. Captures:2.  2 punts </li>
+<li>E01-03-02. Captures:2.  2 punts </li>
+<li>E01-03-03. Captures:1.  1 punts </li>
+<li>E01-03-04. Captures:1.  1 punts </li>
+<li>E01-03-05. Resum amb pdf o semblant.  4 punts </li>
+</ul>
+<p><strong>NO PUJEU CAP ZIP A AULES. NO RESPETAR EL FORMAT ANUL·LA L'EXERCICI</strong> </p>
 
 
 
