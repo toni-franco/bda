@@ -1,0 +1,1327 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../UP2-E01-10%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/">
+      
+      
+        <link rel="next" href="../UP2-E01-20%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Instal.lació de Docker compose - BDA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installacio-de-docker-compose" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="BDA" class="md-header__button md-logo" aria-label="BDA" data-md-component="logo">
+      
+  <img src="../../../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BDA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instal.lació de Docker compose
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BDA" class="md-nav__button md-logo" aria-label="BDA" data-md-component="logo">
+      
+  <img src="../../../assets/icon.png" alt="logo">
+
+    </a>
+    BDA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP1 Arquitectura i emmagatzemament distribuït
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP1 Arquitectura i emmagatzemament distribuït
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/01-Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/E01-01%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercici E01-01 - Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/E01-02%20-%20Arquitectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01-02 - Arquitectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UP1-Arquitectura%20i%20emmagatzemament%20distribu%C3%AFt/E01-03%20Comparar%20formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01-03 Comparar formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2 Ecosistema i processament distribuït
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP2 Ecosistema i processament distribuït
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hadoop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hadoop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10%20Introducci%C3%B3%20a%20Hadoop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a Hadoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-10%20-%20Instal%C2%B7lar%20Hadoop%20en%20Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-10 - Instal·lació pseudodistribuida hadoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instal.lació de Docker compose
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instal.lació de Docker compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#passos-per-a-installar-docker-i-docker-compose-en-debian-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passos per a instal·lar Docker i Docker Compose en Debian 12
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprovacio-rapida-amb-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprovació ràpida amb docker compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-20%20-%20Instal%C2%B7lar%20Hadoop%20amb%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-20 - Instal·lar Hadoop amb Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-30%20Configurar%20cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2 E01 30 Configurar cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-40%20Treballant%20amb%20HDFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-40 Treballant amb HDFS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UP2-E01-50%20Hadoop%203.5%20amb%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2-E01-50 Hadoop 3.5 amb Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#passos-per-a-installar-docker-i-docker-compose-en-debian-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passos per a instal·lar Docker i Docker Compose en Debian 12
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprovacio-rapida-amb-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprovació ràpida amb docker compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installacio-de-docker-compose">Instal.lació de Docker compose</h1>
+<p>Per a instal·lar <strong>Docker Compose</strong> (el connector oficial <code>docker-compose-plugin</code>, que habilita l'ordre <code>docker compose</code>) en <strong>Debian 12 (Bookworm)</strong>, el més recomanable és configurar el repositori oficial de Docker i instal·lar Docker Engine juntament amb el connector.</p>
+<h3 id="passos-per-a-installar-docker-i-docker-compose-en-debian-12">Passos per a instal·lar Docker i Docker Compose en Debian 12</h3>
+<p><strong>1.Eliminar paquets antics o en conflicte:</strong>2 min.</p>
+<p>Si tens versions antigues o paquets no oficials de Docker/Compose instal·lats, elimina'ls primer per a evitar conflictes:</p>
+<pre><code class="language-bash">for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
+  sudo apt remove -y &quot;$pkg&quot;
+done
+</code></pre>
+<p><em>Verificació:</em> Executa <code>apt policy docker.io</code> i comprova que no figura com a instal·lat.</p>
+<p><strong>2.Afegir la clau GPG i el repositori oficial de Docker:</strong>3 min.</p>
+<p>Instal·la els paquets necessaris per a <code>apt</code> sobre HTTPS, descarrega la clau GPG oficial de Docker i afig el repositori corresponent a <code>bookworm</code>:</p>
+<pre><code class="language-Bash">sudo apt update
+sudo apt install -y ca-certificates curl gnupg
+
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+
+sudo apt update
+</code></pre>
+<p><em>Verificació:</em> En executar <code>sudo apt update</code>, hauries de veure línies apuntant a <code>[https://download.docker.com/linux/debian](https://download.docker.com/linux/debian) bookworm InRelease</code> sense errors de signatura.</p>
+<p><strong>3.Instal·lar Docker Engine i Docker Compose plugin:</strong> 3 min.</p>
+<p>Instal·la el motor de Docker, la CLI, <code>containerd</code>, <code>buildx</code> i el connector de Compose:</p>
+<pre><code class="language-Bash">sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code></pre>
+<p><em>Verificació:</em> Executa <code>docker compose version</code> i <code>sudo systemctl status docker</code> per a confirmar que el connector respon i el servei està actiu (<code>active (running)</code>).</p>
+<p><strong>4.Executar Docker sense sudo (opcional però recomanat):</strong>2 min.</p>
+<p>Afig el teu usuari actual al grup <code>docker</code> per a llançar ordres <code>docker compose</code> sense posar <code>sudo</code> davant:</p>
+<pre><code class="language-Bash">sudo usermod -aG docker &quot;$USER&quot;
+newgrp docker
+</code></pre>
+<p><em>Verificació:</em> Executa <code>docker compose version</code> sense <code>sudo</code> i comprova que torna la versió instal·lada sense errors de permisos en <code>/var/run/docker.sock</code>.</p>
+<h3 id="comprovacio-rapida-amb-docker-compose">Comprovació ràpida amb <code>docker compose</code></h3>
+<p>Pots verificar que tot funciona creant un directori de prova amb un fitxer <code>compose.yaml</code> senzill:</p>
+<pre><code class="language-Bash">mkdir -p ~/prova-compose &amp;&amp; cd ~/prova-compose
+cat &lt;&lt; 'EOF' &gt; compose.yaml
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - &quot;8080:80&quot;
+EOF
+docker compose up -d
+docker compose ps
+</code></pre>
+<p>Si obris <code>http://localhost:8080</code> (o <code>http://&lt;IP_DEL_TEU_DEBIAN&gt;:8080</code>), hauries de veure la pàgina de benvinguda d'Nginx. Per a detindre'l i esborrar el contenidor, executa <code>docker compose down</code>.</p>
+<p>Captura pantalla al obrir el port http://localhost:8080/ Fitxer: UP2-E01-15-01.png</p>
+<h1 id="guia-rapida-ordres-basiques-de-docker-dockerfile-i-docker-compose">Guia Ràpida: Ordres Bàsiques de Docker, Dockerfile i Docker Compose</h1>
+<p>Aquest document recull les ordres més habituals per treballar amb <strong>Docker</strong> (gestió d'imatges, contenidors, volums i xarxes), la creació d'imatges personalitzades amb <strong><code>Dockerfile</code></strong> i <strong>Docker Compose</strong> (orquestració de múltiples contenidors).</p>
+<p>El professor entregarà uns documents en format pdf amb els exercicis a fer les captures que es demanen</p>
+<h2 id="1-ordres-basiques-de-docker">1. Ordres Bàsiques de Docker</h2>
+<h3 id="imatges-docker-image">Imatges (<code>docker image</code>)</h3>
+<p>Les imatges són les plantilles de només lectura a partir de les quals es creen els contenidors.</p>
+<ul>
+<li><strong>Cercar una imatge a Docker Hub:</strong></li>
+</ul>
+<p><code>bash
+  docker search &lt;nom_imatge&gt;</code></p>
+<ul>
+<li><strong>Descarregar una imatge:</strong></li>
+</ul>
+<p><code>bash
+  docker pull &lt;nom_imatge&gt;:&lt;etiqueta&gt;
+  # Exemple: docker pull ubuntu:22.04</code></p>
+<ul>
+<li><strong>Llistar les imatges descarregades al sistema:</strong></li>
+</ul>
+<p><code>bash
+  docker images</code></p>
+<ul>
+<li><strong>Construir una imatge a partir d'un <code>Dockerfile</code>:</strong></li>
+</ul>
+<p><code>bash
+  docker build -t &lt;nom_imatge&gt;:&lt;etiqueta&gt; .</code></p>
+<ul>
+<li><strong>Eliminar una imatge:</strong></li>
+</ul>
+<p><code>bash
+  docker rmi &lt;id_o_nom_imatge&gt;</code></p>
+<h3 id="contenidors-docker-container">Contenidors (<code>docker container</code>)</h3>
+<p>Els contenidors són instàncies en execució d'una imatge.</p>
+<ul>
+<li><strong>Crear i arrencar un contenidor nou:</strong></li>
+</ul>
+<p><code>bash
+  docker run -d --name &lt;nom_contenidor&gt; -p &lt;port_host&gt;:&lt;port_contenidor&gt; &lt;imatge&gt;</code></p>
+<ul>
+<li><code>-d</code>: Executa el contenidor en segon pla (<em>detached mode</em>).</li>
+<li><code>--name</code>: Assigna un nom personalitzat al contenidor.</li>
+<li><code>-p</code>: Mapeja un port de la màquina amfitriona amb un port del contenidor (ex. <code>-p 8080:80</code>).</li>
+<li><code>-v</code>: Munta un volum o carpeta local (ex. <code>-v /ruta/local:/ruta/contenidor</code>).</li>
+<li><code>-e</code>: Defineix variables d'entorn (ex. <code>-e MYSQL_ROOT_PASSWORD=secret</code>).</li>
+<li>
+<p><code>--rm</code>: Elimina el contenidor automàticament quan s'atura.</p>
+</li>
+<li>
+<p><strong>Llistar contenidors:</strong></p>
+</li>
+</ul>
+<p><code>bash
+  docker ps        # Només els que estan en execució
+  docker ps -a     # Tots (en execució i aturats)</code></p>
+<ul>
+<li><strong>Aturar i arrencar contenidors existents:</strong></li>
+</ul>
+<p><code>bash
+  docker stop &lt;nom_o_id&gt;
+  docker start &lt;nom_o_id&gt;
+  docker restart &lt;nom_o_id&gt;</code></p>
+<ul>
+<li><strong>Eliminar un contenidor (ha d'estar aturat):</strong></li>
+</ul>
+<p><code>bash
+  docker rm &lt;nom_o_id&gt;
+  # Per forçar l'eliminació encara que estigui en execució:
+  docker rm -f &lt;nom_o_id&gt;</code></p>
+<h3 id="inspeccio-registres-logs-i-execucio">Inspecció, Registres (Logs) i Execució</h3>
+<p>Ordres per depurar i interactuar amb contenidors que ja estan en marxa.</p>
+<ul>
+<li><strong>Veure els registres (logs) d'un contenidor:</strong></li>
+</ul>
+<p><code>bash
+  docker logs &lt;nom_o_id&gt;
+  docker logs -f &lt;nom_o_id&gt;   # Seguir els logs en temps real</code></p>
+<ul>
+<li><strong>Obrir un terminal interactiu dins d'un contenidor en execució:</strong></li>
+</ul>
+<p><code>bash
+  docker exec -it &lt;nom_o_id&gt; /bin/bash
+  # O si la imatge és molt lleugera (com Alpine):
+  docker exec -it &lt;nom_o_id&gt; sh</code></p>
+<ul>
+<li><strong>Veure informació detallada (IP, volums, configuració) d'un contenidor:</strong></li>
+</ul>
+<p><code>bash
+  docker inspect &lt;nom_o_id&gt;</code></p>
+<ul>
+<li><strong>Veure el consum de recursos (CPU, RAM) en temps real:</strong></li>
+</ul>
+<p><code>bash
+  docker stats</code></p>
+<h3 id="volums-i-xarxes">Volums i Xarxes</h3>
+<p>Per persistir dades i comunicar contenidors entre si.</p>
+<ul>
+<li><strong>Gestionar Volums:</strong></li>
+</ul>
+<p><code>bash
+  docker volume ls                  # Llistar volums
+  docker volume create &lt;nom_volum&gt;  # Crear un volum
+  docker volume rm &lt;nom_volum&gt;      # Eliminar un volum</code></p>
+<ul>
+<li><strong>Gestionar Xarxes:</strong></li>
+</ul>
+<p><code>bash
+  docker network ls                 # Llistar xarxes
+  docker network create &lt;nom_xarxa&gt; # Crear una xarxa
+  docker network rm &lt;nom_xarxa&gt;     # Eliminar una xarxa</code></p>
+<h3 id="neteja-del-sistema">Neteja del Sistema</h3>
+<p>Alliberar espai eliminant recursos que no s'utilitzen.</p>
+<ul>
+<li><strong>Eliminar tots els contenidors aturats, xarxes sense ús i imatges òrfenes:</strong></li>
+</ul>
+<p><code>bash
+  docker system prune</code></p>
+<ul>
+<li><strong>Neteja profunda (inclou totes les imatges no utilitzades i volums):</strong></li>
+</ul>
+<p><code>bash
+  docker system prune -a --volumes</code></p>
+<hr />
+<hr />
+<h2 id="2-ordres-basiques-de-docker-compose">2. Ordres Bàsiques de Docker Compose</h2>
+<p><strong>Docker Compose</strong> permet definir i executar aplicacions multicontenidor mitjançant un fitxer de configuració anomenat <code>docker-compose.yml</code> (o <code>compose.yaml</code>).</p>
+<blockquote>
+<p><strong>Nota:</strong> En les versions modernes de Docker, l'ordre s'escriu amb un espai (<code>docker compose</code>) en lloc d'un guió (<code>docker-compose</code>).</p>
+</blockquote>
+<h3 id="cicle-de-vida-de-laplicacio">Cicle de Vida de l'Aplicació</h3>
+<p>Aquestes ordres s'han d'executar dins del directori on es troba el fitxer <code>docker-compose.yml</code>.</p>
+<ul>
+<li><strong>Crear i arrencar tots els serveis definits:</strong></li>
+</ul>
+<p><code>bash
+  docker compose up -d</code></p>
+<ul>
+<li><code>-d</code>: Executa els serveis en segon pla.</li>
+<li>
+<p><code>--build</code>: Força la reconstrucció de les imatges abans d'arrencar.</p>
+</li>
+<li>
+<p><strong>Aturar i eliminar contenidors i xarxes creades per <code>up</code>:</strong></p>
+</li>
+</ul>
+<p><code>bash
+  docker compose down</code></p>
+<ul>
+<li>
+<p><code>-v</code> (o <code>--volumes</code>): Elimina també els volums declarats (compte: es perdran les dades!).</p>
+</li>
+<li>
+<p><strong>Aturar i arrencar serveis sense eliminar-los:</strong></p>
+</li>
+</ul>
+<p><code>bash
+  docker compose stop
+  docker compose start
+  docker compose restart</code></p>
+<h3 id="gestio-i-monitoratge-de-serveis">Gestió i Monitoratge de Serveis</h3>
+<ul>
+<li><strong>Veure l'estat dels contenidors del projecte actual:</strong></li>
+</ul>
+<p><code>bash
+  docker compose ps</code></p>
+<ul>
+<li><strong>Veure els logs de tots els serveis (o d'un en concret):</strong></li>
+</ul>
+<p><code>bash
+  docker compose logs -f
+  docker compose logs -f &lt;nom_servei&gt;</code></p>
+<ul>
+<li><strong>Executar una ordre dins d'un servei en execució:</strong></li>
+</ul>
+<p><code>bash
+  docker compose exec &lt;nom_servei&gt; /bin/bash</code></p>
+<ul>
+<li><strong>Construir o reconstruir les imatges dels serveis:</strong></li>
+</ul>
+<p><code>bash
+  docker compose build</code></p>
+<ul>
+<li><strong>Descarregar les últimes versions de les imatges del fitxer:</strong></li>
+</ul>
+<p><code>bash
+  docker compose pull</code></p>
+<h2 id="practica-utilitzan-la-imatge-dubuntu">Pràctica utilitzan la imatge d'Ubuntu</h2>
+<p>Aquí tens el tutorial actualitzat incorporant exemples pràctics que utilitzen la imatge d'<strong>Ubuntu</strong> (<code>ubuntu:24.04</code> / <code>ubuntu:latest</code>), tant en l'execució de contenidors, la creació d'imatges amb <code>Dockerfile</code> com en la configuració amb <code>Docker Compose</code></p>
+<h2 id="1-ordres-basiques-amb-la-imatge-dubuntu">1. Ordres Bàsiques amb la Imatge d'Ubuntu</h2>
+<h3 id="executar-i-gestionar-contenidors-ubuntu">Executar i gestionar contenidors Ubuntu</h3>
+<ul>
+<li><strong>Descarregar la imatge oficial d'Ubuntu:</strong></li>
+</ul>
+<pre><code class="language-Bash">docker pull ubuntu:24.04
+</code></pre>
+<ul>
+<li><strong>Executar un contenidor interactiu d'Ubuntu amb terminal (<code>bash</code>) i esborrar-lo en sortir:</strong></li>
+</ul>
+<pre><code class="language-Bash">docker run -it --rm --name meu_ubuntu ubuntu:24.04 /bin/bash
+</code></pre>
+<ul>
+<li><code>-it</code>: Combina <code>-i</code> (entrada interactiva) i <code>-t</code> (pseudo-TTY) per treballar dins del terminal.</li>
+<li><code>--rm</code>: Elimina automàticament el contenidor quan s'atura (ideal per fer proves ràpides).</li>
+<li>
+<p><code>--name meu_ubuntu</code>: Assigna un nom fàcil d'identificar al contenidor.</p>
+<p>Captura pantalla (fitxer: UP2-E01-15-02.png) executant la ordre: 
+    <code>pwd;id;cat /etc/lsb-release</code></p>
+</li>
+<li>
+<p><strong>Executar un contenidor Ubuntu en segon pla (<code>detached</code>) perquè es mantingui actiu:</strong></p>
+</li>
+</ul>
+<pre><code class="language-Bash">docker run -d --name ubuntu_bg ubuntu:24.04 sleep infinity
+</code></pre>
+<ul>
+<li>Sense un procés actiu en primer pla (com <code>sleep infinity</code>), un contenidor base d'Ubuntu s'aturaria just després d'arrencar.</li>
+<li><strong>Obrir una nova sessió interactiva dins del contenidor en execució:</strong></li>
+</ul>
+<pre><code class="language-Bash">docker exec -it ubuntu_bg /bin/bash
+</code></pre>
+<ul>
+<li>
+<p>Un cop dins d'Ubuntu, pots fer servir les ordres habituals del sistema, com ara:  <code>apt update &amp;&amp; apt install -y curl</code>.</p>
+<p>Captura pantalla. Fitxer: UP2-E01-15-03.png</p>
+</li>
+<li>
+<p><strong>Inspeccionar, veure logs i aturar/eliminar el contenidor:</strong></p>
+</li>
+</ul>
+<pre><code class="language-Bash">docker inspect ubuntu_bg
+docker logs -f ubuntu_bg
+docker stop ubuntu_bg
+docker rm ubuntu_bg
+</code></pre>
+<p>Captura. Fitxer: UP2-E01-15-04.png</p>
+<h3 id="volums-i-xarxes-amb-ubuntu">Volums i xarxes amb Ubuntu</h3>
+<ul>
+<li><strong>Muntar un volum per persistir dades creades dins d'Ubuntu:</strong></li>
+</ul>
+<pre><code class="language-Bash">docker volume create dades_ubuntu
+docker run -it --rm -v dades_ubuntu:/dades ubuntu:24.04 /bin/bash
+</code></pre>
+<h2 id="2-creacio-dimatges-amb-dockerfile-basades-en-ubuntu">2. Creació d'Imatges amb Dockerfile (Basades en Ubuntu)</h2>
+<p>Un <code>Dockerfile</code> permet automatitzar la creació d'una imatge personalitzada a partir d'Ubuntu.</p>
+<h3 id="instruccions-principals">Instruccions principals</h3>
+<ul>
+<li><code>FROM</code>: Defineix la imatge base (per exemple, <code>ubuntu:24.04</code>).</li>
+<li><code>WORKDIR</code>: Estableix el directori de treball dins del contenidor.</li>
+<li><code>COPY</code>: Copia fitxers o directoris des de la màquina local cap al contenidor.</li>
+<li><code>RUN</code>: Executa ordres durant la construcció de la imatge (com <code>apt-get update</code> i instal·lació de paquets).</li>
+<li><code>ENV</code>: Defineix variables d'entorn persistents (per exemple, <code>DEBIAN_FRONTEND=noninteractive</code> per evitar prompts interactius d'<code>apt</code>).</li>
+<li><code>EXPOSE</code>: Documenta el port d'escolta de l'aplicació.</li>
+<li><code>CMD</code>: Defineix l'ordre per defecte en arrencar el contenidor.</li>
+</ul>
+<h3 id="exemple-1-entorn-ubuntu-amb-python-i-eines-basiques">Exemple 1: Entorn Ubuntu amb Python i eines bàsiques</h3>
+<p>Crea los ficheros:</p>
+<pre><code>#Requeriments.txt
+# Versión exacta
+requests==2.32.3
+
+# Rango compatible (permite actualizaciones de parche/menores según la regla de pip)
+flask~=3.0.0
+
+# Cualquier versión más reciente disponible
+python-dotenv
+
+</code></pre>
+<p>Fitxer: app.py</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route(&quot;/&quot;)
+def hola_mundo():
+  return &quot;¡Hola, mundo desde Python web!&quot;
+
+
+if __name__ == &quot;__main__&quot;:
+  app.run(host=&quot;0.0.0.0&quot;, port=5000, debug=True)
+
+
+</code></pre>
+<pre><code class="language-Dockerfile">FROM ubuntu:24.04
+
+# Evita preguntes interactives durant la instal·lació de paquets amb apt
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+
+WORKDIR /app
+
+# Actualitzar repositoris, instal·lar Python i netejar la cau d'apt per reduir mida
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    curl \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 5000
+
+#CMD [&quot;python3&quot;, &quot;-m&quot;, &quot;http.server&quot;, &quot;8000&quot;]
+CMD [&quot;python3&quot;, &quot;app.py&quot;]
+
+</code></pre>
+<p><code>docker build -t meua_imatge:v1 .</code></p>
+<p><code>docker run -it -p 5000:5000 --name meu_contenidor meua_imatge:v1</code></p>
+<p>Captura imatge: Fitxer: UP2-E01-15-05.png</p>
+<h2 id="3-ordres-basiques-de-docker-compose">3. Ordres Bàsiques de Docker Compose</h2>
+<p>Executa aquestes ordres des del directori on es troba el fitxer <code>docker-compose.yml</code>:</p>
+<pre><code class="language-Bash">docker compose up -d --build   # Construeix (si cal) i arrenca els serveis en segon pla
+docker compose ps              # Consulta l'estat dels contenidors
+docker compose logs -f         # Segueix els logs en temps real
+docker compose exec ubuntu_dev /bin/bash  # Entra al terminal del servei ubuntu_dev
+docker compose stop            # Atura els serveis sense esborrar contenidors
+docker compose down            # Atura i elimina contenidors i xarxes creades
+docker compose down -v         # Elimina també els volums declarats (atenció: pèrdua de dades)
+</code></pre>
+<h2 id="4-exemple-practic-de-docker-composeyml-amb-ubuntu">4. Exemple Pràctic de <code>docker-compose.yml</code> amb Ubuntu</h2>
+<p>Dada la url: <a href="https://anderfernandez.com/blog/tutorial-docker-compose">https://anderfernandez.com/blog/tutorial-docker-compose</a> se entrega un  fichero yaml y todos los ficheros necesarios para el ejercicio que explica, siendo la aplicación (application) una web con ubuntu y php con nginx que se conecta a la BD (sin usar una api ) y añade una fila a una tabla.</p>
+<p>El proyecto utiliza <strong>Ubuntu 24.04</strong> con <strong>Nginx + PHP-FPM</strong> para conectarse directamente mediante <strong>PDO</strong> a una base de datos <strong>MySQL</strong> (<code>tienda_db</code>) e insertar filas en la tabla <code>pedidos</code> sin necesidad de API intermedia</p>
+<p>Se t'entrega un fitxer zip UP2-E01-15.zip</p>
+<h3 id="estructura-del-proyecto-y-puesta-en-marcha">Estructura del proyecto y puesta en marcha</h3>
+<p>Al descomprimir el archivo <code>.zip</code>, obtendrás esta jerarquía:</p>
+<p>Plaintext</p>
+<pre><code>docker_compose_ubuntu_php_nginx_mysql/
+├── docker-compose.yml
+├── application/
+│   ├── Dockerfile
+│   ├── index.php
+│   ├── nginx.conf
+│   └── start.sh
+└── db/
+    └── init.sql
+</code></pre>
+<p>Para levantarlo desde la terminal dentro de la carpeta <code>docker_compose_ubuntu_php_nginx_mysql</code>:</p>
+<ol>
+<li>
+<p>Construye las imágenes y arranca ambos contenedores en segundo plano:</p>
+<p><code>Bash
+docker compose up -d --build</code></p>
+</li>
+<li>
+<p>Abre en tu navegador <strong><code>http://localhost:8080</code></strong> para ver la tabla <code>pedidos</code> y añadir nuevas filas directamente a MySQL.</p>
+</li>
+<li>
+<p>Para detener y limpiar los contenedores (añade <code>-v</code> si quieres borrar también los datos del volumen):</p>
+<p><code>Bash
+docker compose down</code></p>
+</li>
+</ol>
+<p>Fitxer: UP2-E01-15-06.png</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
